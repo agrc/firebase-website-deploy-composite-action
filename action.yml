@@ -18,6 +18,10 @@ inputs:
     description: The mode to use when building the website. development for local development, dev for firebase dev, and production for firebase prod
     required: false
     default: 'production'
+  build-command:
+    description: The name of the npm script used to build the app
+    required: false
+    default: build
 
 runs:
   using: composite
@@ -41,7 +45,7 @@ runs:
 
     - name: 🏗 Run build script
       shell: bash
-      run: npm run build -- --mode ${{ inputs.mode }}
+      run: npm run ${{ inputs.build-command }} -- --mode ${{ inputs.mode }}
 
     - name: 🪣 Cache firebase
       uses: actions/cache@v3
