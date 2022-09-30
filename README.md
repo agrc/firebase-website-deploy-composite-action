@@ -1,5 +1,7 @@
 # firebase-website-deploy-composite-action
 
+[![Push Events](https://github.com/agrc/firebase-website-deploy-composite-action/actions/workflows/push.yml/badge.svg)](https://github.com/agrc/firebase-website-deploy-composite-action/actions/workflows/push.yml)
+
 A GitHub Action that builds and deploys a website to Firebase hosting
 
 ## Usage
