@@ -20,6 +20,9 @@ inputs:
   build-command:
     description: The command used to build the app
     required: true
+  repo-token:
+    description: GitHub token (e.g. secrets.GITHUB_TOKEN). This is only required if preview == 'yes'.
+    required: false
 
 runs:
   using: composite
@@ -107,5 +110,5 @@ runs:
           Visit the preview URL for this PR (updated for commit ${{ github.sha }}):
           [Firebase Preview](${{ steps.deploy.outputs.url }})
           <sub>(expires ${{ steps.deploy.outputs.expires }})</sub>
-
         edit-mode: replace
+        token: ${{ inputs.repo-token }}
