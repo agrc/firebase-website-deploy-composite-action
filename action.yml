@@ -102,7 +102,7 @@ runs:
       uses: chuhlomin/render-template@v1
       if: inputs.preview == 'yes'
       with:
-        template: .github/actions/deploy/template.md
+        template: ./assets/template.md
         vars: |
           commit: ${{ github.sha }}
           url: ${{ steps.deploy.outputs.url }}
