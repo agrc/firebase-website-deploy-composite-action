@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1-0](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.0.0...v1.0.1-0) (2022-09-30)
+
+
+### 🐛 Bug Fixes
+
+* path to template file ([ec5b1fc](https://github.com/agrc/firebase-website-deploy-composite-action/commit/ec5b1fc062898284267d2caf91bc991d2f1f23a4))
+
 ## 1.0.0 (2022-09-30)
 
 
