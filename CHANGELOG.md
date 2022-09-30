@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.0.2...v1.0.3) (2022-09-30)
+
+
+### 🐛 Bug Fixes
+
+* add repo-token input ([e871f0a](https://github.com/agrc/firebase-website-deploy-composite-action/commit/e871f0a026e048541e2207d85ee813a2accf0753))
+
 ## [1.0.2](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.0.1...v1.0.2) (2022-09-30)
 
 
