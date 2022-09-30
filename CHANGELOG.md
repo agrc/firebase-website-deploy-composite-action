@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.0.1...v1.0.2) (2022-09-30)
+
+
+### 🐛 Bug Fixes
+
+* inline comment markdown template ([9ede5ce](https://github.com/agrc/firebase-website-deploy-composite-action/commit/9ede5ce4c2af2f5749a50a4681f98f33fe7b1f3c))
+
 ## [1.0.1](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.0.0...v1.0.1) (2022-09-30)
 
 
