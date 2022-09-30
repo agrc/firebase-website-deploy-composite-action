@@ -97,22 +97,15 @@ runs:
         comment-author: 'github-actions[bot]'
         body-includes: Visit the preview URL for this PR
 
-    - name: 🎨 Render template
-      id: template
-      uses: chuhlomin/render-template@v1
-      if: inputs.preview == 'yes'
-      with:
-        template: ./assets/template.md
-        vars: |
-          commit: ${{ github.sha }}
-          url: ${{ steps.deploy.outputs.url }}
-          expires: ${{ steps.deploy.outputs.expires }}
-
     - name: 💬 Post preview comment
       uses: peter-evans/create-or-update-comment@v2
       if: inputs.preview == 'yes'
       with:
         comment-id: ${{ steps.find-comment.outputs.comment-id }}
         issue-number: ${{ github.event.number }}
-        body: ${{ steps.template.outputs.result }}
+        body: |
+          Visit the preview URL for this PR (updated for commit ${{ github.sha }}):
+          [Firebase Preview](${{ steps.deploy.outputs.url }})
+          <sub>(expires ${{ steps.deploy.outputs.expires }})</sub>
+
         edit-mode: replace
