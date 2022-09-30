@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.4-0](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.0.3...v1.0.4-0) (2022-09-30)
+
+
+### 🐛 Bug Fixes
+
+* strip quotes from preview url ([b5e285e](https://github.com/agrc/firebase-website-deploy-composite-action/commit/b5e285ec94fd08cc27adaebc6449f430148356a1))
+
 ## [1.0.3](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.0.2...v1.0.3) (2022-09-30)
 
 
