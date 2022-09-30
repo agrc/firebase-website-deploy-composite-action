@@ -80,7 +80,7 @@ runs:
         --expires 3d \
         --project ${{ inputs.project-id }} \
         --json)
-        echo "::set-output name=url::$(echo $RESULTS | jq '.result | .[] | .url')"
+        echo "::set-output name=url::$(echo $RESULTS | jq --raw-output '.result | .[] | .url')"
         echo "::set-output name=expires::$(echo $RESULTS | jq '.result | .[] | .expireTime')"
 
     - name: 🚀 Firebase deploy
@@ -108,7 +108,7 @@ runs:
         issue-number: ${{ github.event.number }}
         body: |
           Visit the preview URL for this PR (updated for commit ${{ github.sha }}):
-          [Firebase Preview](${{ steps.deploy.outputs.url }})
+          Firebase Preview: ${{ steps.deploy.outputs.url }}
           <sub>(expires ${{ steps.deploy.outputs.expires }})</sub>
         edit-mode: replace
         token: ${{ inputs.repo-token }}
