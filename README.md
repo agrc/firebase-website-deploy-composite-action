@@ -27,4 +27,6 @@ on:
           service-account-email: ${{ secrets.SERVICE_ACCOUNT_EMAIL }}
           project-id: ${{ secrets.PROJECT_ID }}
           build-command: npm run build -- --mode dev
+          preview: yes
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
 ```
