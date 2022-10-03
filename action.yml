@@ -23,6 +23,21 @@ inputs:
   repo-token:
     description: GitHub token (e.g. secrets.GITHUB_TOKEN). This is only required if preview == 'yes'.
     required: false
+  service-now-instance:
+    description: the sub address to https://{service-now-instance}.service-now.com
+    required: false
+  service-now-table:
+    description: the parent table name to write to
+    required: false
+  service-now-system-id:
+    description: the child record id to write to
+    required: false
+  service-now-username:
+    description: the service account name
+    required: false
+  service-now-password:
+    description: the service account password
+    required: false
 
 runs:
   using: composite
@@ -90,6 +105,17 @@ runs:
         npx firebase-tools deploy
         --only hosting
         --project ${{ inputs.project-id }}
+
+    - name: 🔔 Publish deployment worknote
+      uses: agrc/service-now-worknote-action@v1
+      if: ${{ inputs.service-now-system-id != '' && inputs.preview != 'yes' }}
+      with:
+        repo-token: ${{ inputs.repo-token }}
+        username: ${{ inputs.service-now-username }}
+        password: ${{ inputs.service-now-password }}
+        instance-name: ${{ inputs.service-now-instance }}
+        table-name: ${{ inputs.service-now-table }}
+        system-id: ${{ inputs.service-now-system-id }}
 
     - name: 🔍 Find preview comment
       id: find-comment
