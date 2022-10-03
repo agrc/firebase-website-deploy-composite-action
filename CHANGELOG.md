@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.5-0](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.0.4...v1.0.5-0) (2022-10-03)
+
+
+### 📖 Documentation Improvements
+
+* add service now parameters ([c68500d](https://github.com/agrc/firebase-website-deploy-composite-action/commit/c68500d70983d9fa94224fe74fc43d0a5beef326))
+* add status badge ([90e149a](https://github.com/agrc/firebase-website-deploy-composite-action/commit/90e149ad6a7490b65c8b6e9a004ff4eed4a9acd5))
+
 ## [1.0.4](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.0.3...v1.0.4) (2022-09-30)
 
 
