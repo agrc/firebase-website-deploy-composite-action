@@ -31,4 +31,9 @@ on:
           build-command: npm run build -- --mode dev
           preview: yes
           repo-token: ${{ secrets.GITHUB_TOKEN }}
+          service-now-instance: ${{ secrets.SN_INSTANCE }}
+          service-now-table: ${{ secrets.SN_TABLE }}
+          service-now-system-id: ${{ secrets.SN_SYS_ID }}
+          service-now-username: ${{ secrets.SN_USERNAME }}
+          service-now-password: ${{ secrets.SN_PASSWORD }}
 ```
