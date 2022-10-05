@@ -86,15 +86,15 @@ runs:
         service_account: ${{ inputs.service-account-email }}
         create_credentials_file: true
 
-    - name: ❓ Determining if preview should be deployed
-      id: should-deploy-preview
+    - name: ❓ Determining if preview should be created
+      id: should-create-preview
       if: inputs.preview == 'yes' && github.head_ref !== 'dev'
       shell: bash
       run: echo "::set-output name=deploy::yes"
 
     - name: 🚀 Firebase deploy preview
       id: deploy
-      if: steps.should-deploy-preview.outputs.deploy == 'yes'
+      if: steps.should-create-preview.outputs.deploy == 'yes'
       shell: bash
       run: |
         RESULTS=$(npx firebase-tools hosting:channel:deploy $GITHUB_HEAD_REF \
@@ -126,7 +126,7 @@ runs:
     - name: 🔍 Find preview comment
       id: find-comment
       uses: peter-evans/find-comment@v2
-      if: steps.should-deploy-preview.outputs.deploy == 'yes'
+      if: steps.should-create-preview.outputs.deploy == 'yes'
       with:
         issue-number: ${{ github.event.number }}
         comment-author: 'github-actions[bot]'
@@ -134,7 +134,7 @@ runs:
 
     - name: 💬 Post preview comment
       uses: peter-evans/create-or-update-comment@v2
-      if: steps.should-deploy-preview.outputs.deploy == 'yes'
+      if: steps.should-create-preview.outputs.deploy == 'yes'
       with:
         comment-id: ${{ steps.find-comment.outputs.comment-id }}
         issue-number: ${{ github.event.number }}
