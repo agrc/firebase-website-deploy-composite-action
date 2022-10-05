@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.1.0...v1.1.1) (2022-10-05)
+
+
+### 🐛 Bug Fixes
+
+* remove extra "=" character ([bc2547d](https://github.com/agrc/firebase-website-deploy-composite-action/commit/bc2547d767553bb5bd4b5cb44a6c3921def97dba))
+
 ## [1.1.0](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.0.5...v1.1.0) (2022-10-05)
 
 
