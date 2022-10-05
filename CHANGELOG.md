@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.0.5...v1.1.0) (2022-10-05)
+
+
+### 🚀 Features
+
+* skip preview deploy if the PR originates from dev ([792a993](https://github.com/agrc/firebase-website-deploy-composite-action/commit/792a993b638b0f5d190ea82375c9ae995cafd658))
+
+
+### 🐛 Bug Fixes
+
+* deploy-preview -> create-preview ([ffda5cf](https://github.com/agrc/firebase-website-deploy-composite-action/commit/ffda5cf246c27f55d4e4af66d22f945d376a6f41))
+
 ## [1.0.5](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.0.4...v1.0.5) (2022-10-03)
 
 
