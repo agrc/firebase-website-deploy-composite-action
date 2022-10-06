@@ -101,10 +101,6 @@ runs:
         --expires 3d \
         --project ${{ inputs.project-id }} \
         --json | tee /dev/tty)
-        if [ $(echo $RESULTS | jq '.status') != 'success' ] then
-          echo "deploy failed"
-          exit 1
-        fi
         echo "::set-output name=url::$(echo $RESULTS | jq --raw-output '.result | .[] | .url')"
         echo "::set-output name=expires::$(echo $RESULTS | jq '.result | .[] | .expireTime')"
 
