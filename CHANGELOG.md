@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.2.0...v1.2.1) (2022-10-06)
+
+
+### 🐛 Bug Fixes
+
+* enable tty ([9c36c74](https://github.com/agrc/firebase-website-deploy-composite-action/commit/9c36c745bd29e204bbbbf4db70fbb8ea69c8cfce))
+
 ## [1.2.0](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.1.1...v1.2.0) (2022-10-06)
 
 
