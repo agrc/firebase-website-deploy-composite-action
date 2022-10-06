@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.1.1...v1.2.0) (2022-10-06)
+
+
+### 🚀 Features
+
+* show output for deploy preview command ([cd92fb3](https://github.com/agrc/firebase-website-deploy-composite-action/commit/cd92fb3e262f3efedb0dd9ff603f4e14786f3e05))
+
 ## [1.1.1](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.1.0...v1.1.1) (2022-10-05)
 
 
