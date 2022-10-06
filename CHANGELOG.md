@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.2.2...v1.3.0) (2022-10-06)
+
+
+### 🚀 Features
+
+* cache bower dependencies ([fb79a7e](https://github.com/agrc/firebase-website-deploy-composite-action/commit/fb79a7ea17984ea3d208c9877c9c3e6c1e6c4567))
+
 ## [1.2.2](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.2.1...v1.2.2) (2022-10-06)
 
 
