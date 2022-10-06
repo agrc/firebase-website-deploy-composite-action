@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.2](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.2.1...v1.2.2) (2022-10-06)
+
+
+### 🐛 Bug Fixes
+
+* remove if statement and let jq fail if there is an error ([a097281](https://github.com/agrc/firebase-website-deploy-composite-action/commit/a097281852c1074daf26fb02b61576b221a5a28f))
+
 ## [1.2.1](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.2.0...v1.2.1) (2022-10-06)
 
 
