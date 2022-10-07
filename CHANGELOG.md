@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.3.0...v1.3.1) (2022-10-07)
+
+
+### 🐛 Bug Fixes
+
+* indentation ([81e1ebf](https://github.com/agrc/firebase-website-deploy-composite-action/commit/81e1ebf5abd72fba63e8d5b5d5bf546451462cd9))
+
 ## [1.3.0](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.2.2...v1.3.0) (2022-10-06)
 
 
