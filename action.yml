@@ -69,13 +69,13 @@ runs:
       run: ${{ inputs.build-command }}
     
     - name: 🦤 Cache bower
-        uses: actions/cache@v3
-        with:
-          path: ~/.cache/bower
-          key: ${{ runner.OS }}-bower-${{ hashFiles('bower.json') }}
-          restore-keys: |
-            ${{ runner.OS }}-bower-
-            ${{ runner.OS }}
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/bower
+        key: ${{ runner.OS }}-bower-${{ hashFiles('bower.json') }}
+        restore-keys: |
+          ${{ runner.OS }}-bower-
+          ${{ runner.OS }}
 
     - name: 🪣 Cache firebase
       uses: actions/cache@v3
