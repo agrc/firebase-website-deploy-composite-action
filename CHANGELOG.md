@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.2-0](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.3.1...v1.3.2-0) (2022-10-11)
+
+
+### 🐛 Bug Fixes
+
+* switch to new output definition method ([4a16d48](https://github.com/agrc/firebase-website-deploy-composite-action/commit/4a16d480e8114defbaf83c333207efdc1e16bc10))
+
 ## [1.3.1](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.3.0...v1.3.1) (2022-10-07)
 
 
