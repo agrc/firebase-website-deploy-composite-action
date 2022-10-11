@@ -67,7 +67,7 @@ runs:
     - name: 🏗 Run build command
       shell: bash
       run: ${{ inputs.build-command }}
-    
+
     - name: 🦤 Cache bower
       uses: actions/cache@v3
       with:
@@ -99,7 +99,7 @@ runs:
       id: should-create-preview
       if: inputs.preview == 'yes' && github.head_ref != 'dev'
       shell: bash
-      run: echo "::set-output name=deploy::yes"
+      run: echo "deploy=yes" >> $GITHUB_OUTPUT
 
     - name: 🚀 Firebase deploy preview
       id: deploy
@@ -110,8 +110,8 @@ runs:
         --expires 3d \
         --project ${{ inputs.project-id }} \
         --json | tee /dev/tty)
-        echo "::set-output name=url::$(echo $RESULTS | jq --raw-output '.result | .[] | .url')"
-        echo "::set-output name=expires::$(echo $RESULTS | jq '.result | .[] | .expireTime')"
+        echo "url=$(echo $RESULTS | jq --raw-output '.result | .[] | .url')" >> $GITHUB_OUTPUT
+        echo "expires=$(echo $RESULTS | jq '.result | .[] | .expireTime')" >> $GITHUB_OUTPUT
 
     - name: 🚀 Firebase deploy
       shell: bash
