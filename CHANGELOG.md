@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.2](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.3.1...v1.3.2) (2022-10-24)
+
+
+### 🐛 Bug Fixes
+
+* increase preview expiration to 14 days ([8960273](https://github.com/agrc/firebase-website-deploy-composite-action/commit/89602735113df47e62e37e9465d6807e5ba9f18a)), closes [#37](https://github.com/agrc/firebase-website-deploy-composite-action/issues/37)
+
 ## [1.3.1](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.3.0...v1.3.1) (2022-10-07)
 
 
