@@ -107,7 +107,7 @@ runs:
       shell: 'script --return --quiet --command "bash {0}"'
       run: |
         RESULTS=$(npx firebase-tools hosting:channel:deploy $GITHUB_HEAD_REF \
-        --expires 3d \
+        --expires 14d \
         --project ${{ inputs.project-id }} \
         --json | tee /dev/tty)
         echo "::set-output name=url::$(echo $RESULTS | jq --raw-output '.result | .[] | .url')"
