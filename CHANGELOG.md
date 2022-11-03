@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.3](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.3.2...v1.3.3) (2022-11-03)
+
+
+### 📖 Documentation Improvements
+
+* repo-token is required for service now stuff as well ([49ce0bd](https://github.com/agrc/firebase-website-deploy-composite-action/commit/49ce0bd58866241a2c74816f876196e7db1fc32c))
+
 ## [1.3.2](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.3.1...v1.3.2) (2022-10-24)
 
 
