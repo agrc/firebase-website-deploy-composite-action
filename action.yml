@@ -21,7 +21,7 @@ inputs:
     description: The command used to build the app
     required: true
   repo-token:
-    description: GitHub token (e.g. secrets.GITHUB_TOKEN). This is only required if preview == 'yes'.
+    description: GitHub token (e.g. secrets.GITHUB_TOKEN). This is only required if preview == 'yes' or if you are passing a value to service-now-system-id.
     required: false
   service-now-instance:
     description: the sub address to https://{service-now-instance}.service-now.com
