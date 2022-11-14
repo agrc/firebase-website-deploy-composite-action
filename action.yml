@@ -118,7 +118,6 @@ runs:
       if: inputs.preview != 'yes'
       run: >
         npx firebase-tools deploy
-        --only hosting
         --project ${{ inputs.project-id }}
 
     - name: 🔔 Publish deployment worknote
