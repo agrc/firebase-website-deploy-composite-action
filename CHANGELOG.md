@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.4.0](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.3.3...v1.4.0) (2022-12-01)
+
+
+### 🐛 Bug Fixes
+
+* switch to new output definition method ([8c8a9c9](https://github.com/agrc/firebase-website-deploy-composite-action/commit/8c8a9c90e758f597b137bd5e07c37233fc0ce7c3))
+
+
+### 🚀 Features
+
+* deploy all available firebase services ([e4c48c2](https://github.com/agrc/firebase-website-deploy-composite-action/commit/e4c48c2364880fe47a3e8d436accfaae269d3b6f))
+
 ## [1.3.3](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.3.2...v1.3.3) (2022-11-03)
 
 
