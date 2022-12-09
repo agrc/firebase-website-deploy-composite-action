@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0-0](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.4.0...v1.5.0-0) (2022-12-09)
+
+
+### 🚀 Features
+
+* handle multiple firebase hosting targets ([f50f138](https://github.com/agrc/firebase-website-deploy-composite-action/commit/f50f1388ed2f3d4b42daefe81e7754800120e930)), closes [#48](https://github.com/agrc/firebase-website-deploy-composite-action/issues/48)
+
 ## [1.4.0](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.3.3...v1.4.0) (2022-12-01)
 
 
