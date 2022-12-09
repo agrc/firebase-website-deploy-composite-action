@@ -110,8 +110,8 @@ runs:
         --expires 14d \
         --project ${{ inputs.project-id }} \
         --json | tee /dev/tty)
-        echo "url=$(echo $RESULTS | jq --raw-output '.result | .[] | .url')" >> $GITHUB_OUTPUT
-        echo "expires=$(echo $RESULTS | jq '.result | .[] | .expireTime')" >> $GITHUB_OUTPUT
+        echo "url=$(echo $RESULTS | jq --raw-output '.result | .[] | .url' | tr '\n' ' | ')" >> $GITHUB_OUTPUT
+        echo "expires=$(echo $RESULTS | jq '.result | .[] | .expireTime' | tr '\n' ' | ')" >> $GITHUB_OUTPUT
 
     - name: 🚀 Firebase deploy
       shell: bash
