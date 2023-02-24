@@ -104,7 +104,7 @@ runs:
     - name: 🚀 Firebase deploy preview
       id: deploy
       if: steps.should-create-preview.outputs.deploy == 'yes'
-      shell: 'script --return --quiet --command "bash {0}"'
+      shell: bash
       run: |
         RESULTS=$(npx firebase-tools hosting:channel:deploy $GITHUB_HEAD_REF \
         --expires 14d \
