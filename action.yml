@@ -104,13 +104,16 @@ runs:
     - name: 🚀 Firebase deploy preview
       id: deploy
       if: steps.should-create-preview.outputs.deploy == 'yes'
-      shell: 'script --return --command "bash {0}"'
+      shell: 'script --return --quiet --command "bash {0}"'
       run: |
         RESULTS=$(npx firebase-tools hosting:channel:deploy $GITHUB_HEAD_REF \
         --expires 14d \
         --project ${{ inputs.project-id }} \
         --json | tee /dev/tty)
-
+        if [[ $(echo $RESULTS | jq '.status') == 'error' ]]
+        then
+          exit 1
+        fi
         echo "url=$(echo $RESULTS | jq --raw-output '.result | .[] | .url' | tr '\n' ' | ')" >> $GITHUB_OUTPUT
         echo "expires=$(echo $RESULTS | jq '.result | .[] | .expireTime' | tr '\n' ' | ')" >> $GITHUB_OUTPUT
 
