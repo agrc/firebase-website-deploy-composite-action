@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.5.1-0](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.5.0...v1.5.1-0) (2023-02-24)
+
+
+### 🐛 Bug Fixes
+
+* add if else statement to try and fail ([4601d59](https://github.com/agrc/firebase-website-deploy-composite-action/commit/4601d5958455d94a3fa2a912322ec1a63280a592))
+* surface bash errors ([3afb640](https://github.com/agrc/firebase-website-deploy-composite-action/commit/3afb64062bd17101fc11df4d43bc46c4b036c976))
+
 ## [1.5.0](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.4.0...v1.5.0) (2022-12-13)
 
 
