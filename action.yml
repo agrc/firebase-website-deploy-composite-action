@@ -59,6 +59,15 @@ runs:
       shell: bash
       run: npm run copy:arcgis --if-present
 
+    - name: 🗝️ Authenticate to Google Cloud
+      id: auth
+      uses: google-github-actions/auth@v1
+      with:
+        access_token_scopes: 'email, openid, https://www.googleapis.com/auth/cloud-platform, https://www.googleapis.com/auth/firebase'
+        workload_identity_provider: ${{ inputs.identity-provider }}
+        service_account: ${{ inputs.service-account-email }}
+        create_credentials_file: true
+
     - name: 🍳 Run prebuild command
       if: ${{ inputs.prebuild-command != '' }}
       shell: bash
@@ -85,15 +94,6 @@ runs:
         restore-keys: |
           ${{ runner.OS }}-firebase-
           ${{ runner.OS }}-
-
-    - name: 🗝️ Authenticate to Google Cloud
-      id: auth
-      uses: google-github-actions/auth@v1
-      with:
-        access_token_scopes: 'email, openid, https://www.googleapis.com/auth/cloud-platform, https://www.googleapis.com/auth/firebase'
-        workload_identity_provider: ${{ inputs.identity-provider }}
-        service_account: ${{ inputs.service-account-email }}
-        create_credentials_file: true
 
     - name: ❓ Determining if preview should be created
       id: should-create-preview
