@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.1](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.5.0...v1.5.1) (2023-05-10)
+
+
+### 🐛 Bug Fixes
+
+* auth before build commands ([4e7b9b0](https://github.com/agrc/firebase-website-deploy-composite-action/commit/4e7b9b0852ba9ce1dcbacdc4e5eb7252badf7c4d))
+
 ## [1.5.0](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.4.0...v1.5.0) (2022-12-13)
 
 
