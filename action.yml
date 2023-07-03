@@ -141,7 +141,7 @@ runs:
         body-includes: Visit the preview URL for this PR
 
     - name: 💬 Post preview comment
-      uses: peter-evans/create-or-update-comment@v2
+      uses: peter-evans/create-or-update-comment@v3
       if: steps.should-create-preview.outputs.deploy == 'yes'
       with:
         comment-id: ${{ steps.find-comment.outputs.comment-id }}
