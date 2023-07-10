@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0-0](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.5.1...v1.6.0-0) (2023-07-10)
+
+
+### 🚀 Features
+
+* add working directory ([3203684](https://github.com/agrc/firebase-website-deploy-composite-action/commit/32036847bfbb7b94b19d3f06f1ee6e651588d470))
+
 ## [1.5.1](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.5.0...v1.5.1) (2023-05-10)
 
 
