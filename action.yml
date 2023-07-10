@@ -38,13 +38,21 @@ inputs:
   service-now-password:
     description: the service account password
     required: false
+  working-directory:
+    description: the location of your package.json or whatever
+    required: false
+    default: '.'
 
 runs:
   using: composite
   steps:
     - name: ⬇️ Set up code
       uses: actions/checkout@v3
-
+      
+    - name: 🔀 Set directory
+      run: cd ${{ inputs.working-directory }}
+      shell: bash
+      
     - name: ⎔ Setup Node.js
       uses: actions/setup-node@v3
       with:
