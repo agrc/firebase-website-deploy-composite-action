@@ -80,7 +80,7 @@ runs:
       run: ${{ inputs.build-command }}
 
     - name: 🦤 Cache bower
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: ~/.cache/bower
         key: ${{ runner.OS }}-bower-${{ hashFiles('bower.json') }}
@@ -89,7 +89,7 @@ runs:
           ${{ runner.OS }}
 
     - name: 🪣 Cache firebase
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: ./.firebase
         key: ${{ runner.OS }}-firebase-${{ hashFiles('**/*.cache') }}
@@ -135,7 +135,7 @@ runs:
 
     - name: 🔍 Find preview comment
       id: find-comment
-      uses: peter-evans/find-comment@v2
+      uses: peter-evans/find-comment@v3
       if: steps.should-create-preview.outputs.deploy == 'yes'
       with:
         issue-number: ${{ github.event.number }}
@@ -143,7 +143,7 @@ runs:
         body-includes: Visit the preview URL for this PR
 
     - name: 💬 Post preview comment
-      uses: peter-evans/create-or-update-comment@v3
+      uses: peter-evans/create-or-update-comment@v4
       if: steps.should-create-preview.outputs.deploy == 'yes'
       with:
         comment-id: ${{ steps.find-comment.outputs.comment-id }}
