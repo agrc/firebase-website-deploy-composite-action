@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.2](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.5.1...v1.5.2) (2024-07-15)
+
+
+### Bug Fixes
+
+* use correct commit message prefix for dbot action updates ([ef06394](https://github.com/agrc/firebase-website-deploy-composite-action/commit/ef06394385c70288884c2a82581309d8bce12f57))
+
 ## [1.5.1](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.5.0...v1.5.1) (2023-05-10)
 
 
