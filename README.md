@@ -20,6 +20,8 @@ on:
     needs: release-please
     if: github.ref_name == 'main' && needs.release-please.outputs.release_created
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
 
     steps:
       - name: 🚀 Deploy
