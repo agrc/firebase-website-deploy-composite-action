@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.5.3](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.5.2...v1.5.3) (2024-09-30)
+
+
+### Bug Fixes
+
+* remove dev check preview ([edbbf70](https://github.com/agrc/firebase-website-deploy-composite-action/commit/edbbf702c8e36bf36632efd7565db470989c8970))
+
+
+### Documentation
+
+* add required permissions to example ([#65](https://github.com/agrc/firebase-website-deploy-composite-action/issues/65)) ([c473b7f](https://github.com/agrc/firebase-website-deploy-composite-action/commit/c473b7f5d826677a774b43d98bcd5361c3b33dfd))
+
 ## [1.5.2](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.5.1...v1.5.2) (2024-07-15)
 
 
