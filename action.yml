@@ -99,7 +99,7 @@ runs:
 
     - name: ❓ Determining if preview should be created
       id: should-create-preview
-      if: inputs.preview == 'yes' && github.head_ref != 'dev'
+      if: inputs.preview == 'yes'
       shell: bash
       run: echo "deploy=yes" >> $GITHUB_OUTPUT
 
