@@ -8,7 +8,7 @@ inputs:
     description: Service Account Email
     required: true
   project-id:
-    description: Project ID
+    description: Project ID or alias. This also sets the firebase environment (https://firebase.google.com/docs/functions/config-env).
     required: true
   preview:
     description: Determines if firebase deploys to a preview channel
@@ -71,7 +71,7 @@ runs:
         create_credentials_file: true
 
     - name: 🍳 Run prebuild command
-      if: ${{ inputs.prebuild-command != '' }}
+      if: inputs.prebuild-command != ''
       shell: bash
       run: ${{ inputs.prebuild-command }}
 
@@ -88,6 +88,12 @@ runs:
           ${{ runner.OS }}-bower-
           ${{ runner.OS }}
 
+    - name: ❓ Determining if preview should be created
+      id: should-create-preview
+      if: inputs.preview == 'yes'
+      shell: bash
+      run: echo "deploy=yes" >> $GITHUB_OUTPUT
+
     - name: 🪣 Cache firebase
       uses: actions/cache@v4
       with:
@@ -96,12 +102,6 @@ runs:
         restore-keys: |
           ${{ runner.OS }}-firebase-
           ${{ runner.OS }}-
-
-    - name: ❓ Determining if preview should be created
-      id: should-create-preview
-      if: inputs.preview == 'yes'
-      shell: bash
-      run: echo "deploy=yes" >> $GITHUB_OUTPUT
 
     - name: 🚀 Firebase deploy preview
       id: deploy
@@ -124,7 +124,7 @@ runs:
 
     - name: 🔔 Publish deployment worknote
       uses: agrc/service-now-worknote-action@v1
-      if: ${{ inputs.service-now-system-id != '' && inputs.preview != 'yes' }}
+      if: inputs.service-now-system-id != '' && inputs.preview != 'yes'
       with:
         repo-token: ${{ inputs.repo-token }}
         username: ${{ inputs.service-now-username }}
