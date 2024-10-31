@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.4](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.5.3...v1.5.4) (2024-10-31)
+
+
+### Documentation
+
+* make it clear that you can pass a project id or alias ([203a2b0](https://github.com/agrc/firebase-website-deploy-composite-action/commit/203a2b022062c2c16750aa8c93818a36655e983b))
+
 ## [1.5.3](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.5.2...v1.5.3) (2024-09-30)
 
 
