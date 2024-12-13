@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0-0](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.5.4...v1.6.0-0) (2024-12-13)
+
+
+### Features
+
+* add support for pnpm ([adcc97f](https://github.com/agrc/firebase-website-deploy-composite-action/commit/adcc97fa71d79d1a58dc05428c7de53c40ce02e2))
+
 ## [1.5.4](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.5.3...v1.5.4) (2024-10-31)
 
 
