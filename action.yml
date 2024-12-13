@@ -47,19 +47,35 @@ runs:
       with:
           show-progress: false
 
+    - name: ❓ Determine Package Manager
+      shell: bash
+      id: package-manager
+      run: |
+        if [ -f pnpm-lock.yaml ]; then
+          echo "{name}={pnpm}" >> $GITHUB_STATE
+        else
+          echo "{name}={npm}" >> $GITHUB_STATE
+        fi
+
+    - name: 📦 Setup PNPM
+      if: steps.package-manager.outputs.name == 'pnpm'
+      uses: pnpm/action-setup@v4
+      with:
+        version: 9
+
     - name: ⎔ Setup Node.js
       uses: actions/setup-node@v4
       with:
         node-version: lts/*
-        cache: npm
+        cache: steps.package-manager.outputs.name
 
     - name: 📥 Download dependencies
       shell: bash
-      run: npm ci
+      run: ${{ steps.package-manager.outputs.name }} install
 
     - name: 👥 Copy ArcGIS assets
       shell: bash
-      run: npm run copy:arcgis --if-present
+      run: ${{ steps.package-manager.outputs.name }} run copy:arcgis --if-present
 
     - name: 🗝️ Authenticate to Google Cloud
       id: auth
