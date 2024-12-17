@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.1](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.6.0...v1.6.1) (2024-12-17)
+
+
+### Bug Fixes
+
+* make --if-present flag work for both packages managers ([c976aab](https://github.com/agrc/firebase-website-deploy-composite-action/commit/c976aab2969e9c4fddaca13940904e71e81ee521))
+
 ## [1.6.0](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.5.4...v1.6.0) (2024-12-16)
 
 
