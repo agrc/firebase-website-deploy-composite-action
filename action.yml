@@ -77,7 +77,7 @@ runs:
 
     - name: 👥 Copy ArcGIS assets
       shell: bash
-      run: ${{ steps.package-manager.outputs.name }} run copy:arcgis --if-present
+      run: ${{ steps.package-manager.outputs.name }} run --if-present copy:arcgis
 
     - name: 🗝️ Authenticate to Google Cloud
       id: auth
