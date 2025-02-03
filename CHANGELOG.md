@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.7.0-0](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.6.1...v1.7.0-0) (2025-02-03)
+
+
+### Features
+
+* add `working-directory` optional input ([38aca0c](https://github.com/agrc/firebase-website-deploy-composite-action/commit/38aca0c1b8bb3177806f06593a356598e2acb351))
+
+
+### Dependencies
+
+* bump pnpm ([c40c1be](https://github.com/agrc/firebase-website-deploy-composite-action/commit/c40c1be79fa84c682f278b5122f6d2a516fe2129))
+
 ## [1.6.1](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.6.0...v1.6.1) (2024-12-17)
 
 
