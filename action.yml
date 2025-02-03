@@ -38,6 +38,10 @@ inputs:
   service-now-password:
     description: the service account password
     required: false
+  working-directory:
+    description: The directory to run the build command in
+    required: false
+    default: '.'
 
 runs:
   using: composite
@@ -49,6 +53,7 @@ runs:
 
     - name: ❓ Determine Package Manager
       shell: bash
+      working-directory: ${{ inputs.working-directory }}
       id: package-manager
       run: |
         if [ -f pnpm-lock.yaml ]; then
@@ -70,13 +75,16 @@ runs:
       with:
         node-version: lts/*
         cache: ${{ steps.package-manager.outputs.name }}
+        cache-dependency-path: ${{ inputs.working-directory }}
 
     - name: 📥 Download dependencies
       shell: bash
+      working-directory: ${{ inputs.working-directory }}
       run: ${{ steps.package-manager.outputs.name }} install
 
     - name: 👥 Copy ArcGIS assets
       shell: bash
+      working-directory: ${{ inputs.working-directory }}
       run: ${{ steps.package-manager.outputs.name }} run --if-present copy:arcgis
 
     - name: 🗝️ Authenticate to Google Cloud
@@ -91,10 +99,12 @@ runs:
     - name: 🍳 Run prebuild command
       if: inputs.prebuild-command != ''
       shell: bash
+      working-directory: ${{ inputs.working-directory }}
       run: ${{ inputs.prebuild-command }}
 
     - name: 🏗 Run build command
       shell: bash
+      working-directory: ${{ inputs.working-directory }}
       run: ${{ inputs.build-command }}
 
     - name: 🦤 Cache bower
@@ -115,7 +125,7 @@ runs:
     - name: 🪣 Cache firebase
       uses: actions/cache@v4
       with:
-        path: ./.firebase
+        path: ${{ inputs.working-directory }}/.firebase
         key: ${{ runner.OS }}-firebase-${{ hashFiles('**/*.cache') }}
         restore-keys: |
           ${{ runner.OS }}-firebase-
@@ -125,6 +135,7 @@ runs:
       id: deploy
       if: steps.should-create-preview.outputs.deploy == 'yes'
       shell: 'script --return --quiet --command "bash {0}"'
+      working-directory: ${{ inputs.working-directory }}
       run: |
         RESULTS=$(npx firebase-tools hosting:channel:deploy $GITHUB_HEAD_REF \
         --expires 14d \
@@ -136,6 +147,7 @@ runs:
     - name: 🚀 Firebase deploy
       shell: bash
       if: inputs.preview != 'yes'
+      working-directory: ${{ inputs.working-directory }}
       run: >
         npx firebase-tools deploy
         --project ${{ inputs.project-id }}
