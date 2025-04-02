@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.1](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.7.0...v1.7.1) (2025-04-02)
+
+
+### Bug Fixes
+
+* switch to latest version of PNPM ([bf3c783](https://github.com/agrc/firebase-website-deploy-composite-action/commit/bf3c783561b8e5a38206e208ed65e426ea0751bd))
+
 ## [1.7.0](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.6.1...v1.7.0) (2025-02-03)
 
 
