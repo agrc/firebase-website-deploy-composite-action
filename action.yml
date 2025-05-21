@@ -122,15 +122,6 @@ runs:
       shell: bash
       run: echo "deploy=yes" >> $GITHUB_OUTPUT
 
-    - name: 🪣 Cache firebase
-      uses: actions/cache@v4
-      with:
-        path: ${{ inputs.working-directory }}/.firebase
-        key: ${{ runner.OS }}-firebase-${{ hashFiles('**/*.cache') }}
-        restore-keys: |
-          ${{ runner.OS }}-firebase-
-          ${{ runner.OS }}-
-
     - name: 🚀 Firebase deploy preview
       id: deploy
       if: steps.should-create-preview.outputs.deploy == 'yes'
