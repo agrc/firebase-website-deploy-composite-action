@@ -59,9 +59,11 @@ runs:
         if [ -f pnpm-lock.yaml ]; then
           echo "Using PNPM"
           echo "name=pnpm" >> $GITHUB_OUTPUT
+          echo "execute=pnpm dlx" >> $GITHUB_OUTPUT
         else
           echo "Using NPM"
           echo "name=npm" >> $GITHUB_OUTPUT
+          echo "execute=npx" >> $GITHUB_OUTPUT
         fi
 
     - name: 📦 Setup PNPM
@@ -128,7 +130,7 @@ runs:
       shell: 'script --return --quiet --command "bash {0}"'
       working-directory: ${{ inputs.working-directory }}
       run: |
-        RESULTS=$(npx firebase-tools hosting:channel:deploy $GITHUB_HEAD_REF \
+        RESULTS=$(${{ steps.package-manager.outputs.execute }} firebase-tools hosting:channel:deploy $GITHUB_HEAD_REF \
         --expires 14d \
         --project ${{ inputs.project-id }} \
         --json | tee /dev/tty)
@@ -140,7 +142,7 @@ runs:
       if: inputs.preview != 'yes'
       working-directory: ${{ inputs.working-directory }}
       run: >
-        npx firebase-tools deploy
+        ${{ steps.package-manager.outputs.execute }} firebase-tools deploy
         --project ${{ inputs.project-id }}
 
     - name: 🔔 Publish deployment worknote
