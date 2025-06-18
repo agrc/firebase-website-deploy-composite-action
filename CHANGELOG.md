@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.2](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.7.1...v1.7.2) (2025-06-18)
+
+
+### Bug Fixes
+
+* use pnpm dlx or npx depending on package manager ([76bca5a](https://github.com/agrc/firebase-website-deploy-composite-action/commit/76bca5ad9617775317a020ced390ba7265119243))
+
 ## [1.7.1](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.7.0...v1.7.1) (2025-04-02)
 
 
