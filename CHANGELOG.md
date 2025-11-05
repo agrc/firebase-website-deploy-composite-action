@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.7.3](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.7.2...v1.7.3) (2025-11-05)
+
+
+### Features
+
+* allow node-version to be overwritten with a variable ([cbd5922](https://github.com/agrc/firebase-website-deploy-composite-action/commit/cbd592264397209ec206d02a45a1c7884f46b7a9))
+
+
+### Dependencies
+
+* bump the ci-dependencies group across 1 directory with 5 updates ([#94](https://github.com/agrc/firebase-website-deploy-composite-action/issues/94)) ([101cc72](https://github.com/agrc/firebase-website-deploy-composite-action/commit/101cc72dae229070bcb77012f01759cab6d286c8))
+
 ## [1.7.2](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.7.1...v1.7.2) (2025-06-18)
 
 
