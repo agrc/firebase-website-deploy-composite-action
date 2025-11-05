@@ -42,6 +42,10 @@ inputs:
     description: The directory to run the build command in
     required: false
     default: '.'
+  node-version:
+    description: The version of node to use
+    required: false
+    default: 'lts/*'
 
 runs:
   using: composite
@@ -49,7 +53,7 @@ runs:
     - name: ⬇️ Set up code
       uses: actions/checkout@v4
       with:
-          show-progress: false
+        show-progress: false
 
     - name: ❓ Determine Package Manager
       shell: bash
@@ -75,7 +79,7 @@ runs:
     - name: ⎔ Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: lts/*
+        node-version: ${{ inputs.node-version }}
         cache: ${{ steps.package-manager.outputs.name }}
         cache-dependency-path: ${{ inputs.working-directory }}
 
