@@ -97,7 +97,7 @@ runs:
       id: auth
       uses: google-github-actions/auth@v2
       with:
-        access_token_scopes: ''email, openid, https://www.googleapis.com/auth/cloud-platform, https://www.googleapis.com/auth/firebase'
+        access_token_scopes: 'email, openid, https://www.googleapis.com/auth/cloud-platform, https://www.googleapis.com/auth/firebase'
         workload_identity_provider: ${{ inputs.identity-provider }}
         service_account: ${{ inputs.service-account-email }}
         create_credentials_file: true
