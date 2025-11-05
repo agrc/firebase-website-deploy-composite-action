@@ -13,7 +13,7 @@ inputs:
   preview:
     description: Determines if firebase deploys to a preview channel
     required: false
-    default: "no"
+    default: 'no'
   prebuild-command:
     description: The command run before the app is built
     required: false
@@ -41,11 +41,11 @@ inputs:
   working-directory:
     description: The directory to run the build command in
     required: false
-    default: "."
+    default: '.'
   node-version:
     description: The version of node to use
     required: false
-    default: "lts/*"
+    default: 'lts/*'
 
 runs:
   using: composite
@@ -97,7 +97,7 @@ runs:
       id: auth
       uses: google-github-actions/auth@v2
       with:
-        access_token_scopes: "email, openid, https://www.googleapis.com/auth/cloud-platform, https://www.googleapis.com/auth/firebase"
+        access_token_scopes: ''email, openid, https://www.googleapis.com/auth/cloud-platform, https://www.googleapis.com/auth/firebase'
         workload_identity_provider: ${{ inputs.identity-provider }}
         service_account: ${{ inputs.service-account-email }}
         create_credentials_file: true
@@ -166,7 +166,7 @@ runs:
       if: steps.should-create-preview.outputs.deploy == 'yes'
       with:
         issue-number: ${{ github.event.number }}
-        comment-author: "github-actions[bot]"
+        comment-author: 'github-actions[bot]'
         body-includes: Visit the preview URL for this PR
 
     - name: 💬 Post preview comment
