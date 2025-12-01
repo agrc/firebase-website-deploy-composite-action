@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.4](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.7.3...v1.7.4) (2025-12-01)
+
+
+### Dependencies
+
+* bump actions/checkout from 5 to 6 in the ci-dependencies group ([749d207](https://github.com/agrc/firebase-website-deploy-composite-action/commit/749d207d4543a00fcb625538cdc390211dbfc4b6))
+
 ## [1.7.3](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.7.2...v1.7.3) (2025-11-05)
 
 
