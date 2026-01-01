@@ -114,7 +114,7 @@ runs:
       run: ${{ inputs.build-command }}
 
     - name: 🦤 Cache bower
-      uses: actions/cache@v4
+      uses: actions/cache@v5
       with:
         path: ~/.cache/bower
         key: ${{ runner.OS }}-bower-${{ hashFiles('bower.json') }}
