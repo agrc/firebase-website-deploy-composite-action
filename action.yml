@@ -113,15 +113,6 @@ runs:
       working-directory: ${{ inputs.working-directory }}
       run: ${{ inputs.build-command }}
 
-    - name: 🦤 Cache bower
-      uses: actions/cache@v4
-      with:
-        path: ~/.cache/bower
-        key: ${{ runner.OS }}-bower-${{ hashFiles('bower.json') }}
-        restore-keys: |
-          ${{ runner.OS }}-bower-
-          ${{ runner.OS }}
-
     - name: ❓ Determining if preview should be created
       id: should-create-preview
       if: inputs.preview == 'yes'
