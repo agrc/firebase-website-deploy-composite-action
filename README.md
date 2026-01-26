@@ -24,8 +24,13 @@ on:
       id-token: write
 
     steps:
+      - name: ⬇️ Set up code
+        uses: actions/checkout@v6
+        with:
+          show-progress: false
+
       - name: 🚀 Deploy
-        uses: agrc/firebase-website-deploy-composite-action@v1
+        uses: agrc/firebase-website-deploy-composite-action@v2
         with:
           identity-provider: ${{ secrets.IDENTITY_PROVIDER }}
           service-account-email: ${{ secrets.SERVICE_ACCOUNT_EMAIL }}
