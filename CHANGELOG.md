@@ -1,5 +1,21 @@
 # Changelog
 
+## [v2.0.0-rc.1](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.7.4...v2.0.0-rc.1) (2026-01-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* the actions/checkout step has been removed from this action to allow for more flexibility between checkout and this action running. Migration instructions: Add checkout to the parent workflow before executing this step.
+
+### Features
+
+* remove checkout from action ([76f1a57](https://github.com/agrc/firebase-website-deploy-composite-action/commit/76f1a57a90358549fc931c2a33e251f7c6e474cc))
+
+
+### Documentation
+
+* update example to include checkout ([e21986f](https://github.com/agrc/firebase-website-deploy-composite-action/commit/e21986f3e3bc7e603154e1a2f57f3f935de26d0a))
+
 ## [1.7.4](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.7.3...v1.7.4) (2025-12-01)
 
 
