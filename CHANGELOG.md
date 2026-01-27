@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.0-rc.2](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v2.0.0-rc.1...v2.0.0-rc.2) (2026-01-27)
+
+
+### Features
+
+* display summary in github annotations ([73c4190](https://github.com/agrc/firebase-website-deploy-composite-action/commit/73c4190338a421f57530353c4f8a28f8118c6d61)), closes [#73](https://github.com/agrc/firebase-website-deploy-composite-action/issues/73)
+
 ## [v2.0.0-rc.1](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.7.4...v2.0.0-rc.1) (2026-01-26)
 
 
