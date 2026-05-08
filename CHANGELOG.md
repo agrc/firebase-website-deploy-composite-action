@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v2.0.0...v2.0.1) (2026-05-08)
+
+
+### Dependencies
+
+* bump pnpm setup action ([f564a3e](https://github.com/agrc/firebase-website-deploy-composite-action/commit/f564a3efa2f1014dbef390f2dc82ddb4991134da))
+
 ## [2.0.0](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v1.7.4...v2.0.0) (2026-01-27)
 
 
