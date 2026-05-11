@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.0.2-rc.1](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v2.0.1...v2.0.2-rc.1) (2026-05-11)
+
+
+### Bug Fixes
+
+* make firebase preview deploy failure fail the entire workflow ([a74ea80](https://github.com/agrc/firebase-website-deploy-composite-action/commit/a74ea80adcd4928eac5433040a440f4298b3cfc3))
+* use correct firebase tools binary name ([b3089d0](https://github.com/agrc/firebase-website-deploy-composite-action/commit/b3089d005371bde3f931e1cd1390f9f3e3e6cfa4))
+* use more stable pnpm execute statement ([4bbbb6a](https://github.com/agrc/firebase-website-deploy-composite-action/commit/4bbbb6a82f94bbecd7e41fc76086a2e066b545ba))
+
 ## [2.0.1](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v2.0.0...v2.0.1) (2026-05-08)
 
 
