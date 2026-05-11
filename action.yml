@@ -120,10 +120,14 @@ runs:
       shell: 'script --return --quiet --command "bash {0}"'
       working-directory: ${{ inputs.working-directory }}
       run: |
-        RESULTS=$(${{ steps.package-manager.outputs.execute }} firebase hosting:channel:deploy $GITHUB_HEAD_REF \
-        --expires 14d \
-        --project ${{ inputs.project-id }} \
-        --json | tee /dev/tty)
+        set -euo pipefail
+        results_file="$(mktemp)"
+
+        ${{ steps.package-manager.outputs.execute }} firebase hosting:channel:deploy $GITHUB_HEAD_REF \
+         --expires 14d \
+         --project ${{ inputs.project-id }} \
+        --json | tee /dev/tty > "$results_file"
+        RESULTS="$(cat "$results_file")"
         echo "url=$(echo $RESULTS | jq --raw-output '.result | .[] | .url' | tr '\n' ' | ')" >> $GITHUB_OUTPUT
         echo "expires=$(echo $RESULTS | jq '.result | .[] | .expireTime' | tr '\n' ' | ')" >> $GITHUB_OUTPUT
 
