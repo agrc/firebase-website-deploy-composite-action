@@ -58,7 +58,7 @@ runs:
         if [ -f pnpm-lock.yaml ]; then
           echo "Using PNPM"
           echo "name=pnpm" >> $GITHUB_OUTPUT
-          echo "execute=pnpm dlx" >> $GITHUB_OUTPUT
+          echo "execute=pnpm exec" >> $GITHUB_OUTPUT
         else
           echo "Using NPM"
           echo "name=npm" >> $GITHUB_OUTPUT
