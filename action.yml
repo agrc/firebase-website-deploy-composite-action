@@ -83,7 +83,8 @@ runs:
       working-directory: ${{ inputs.working-directory }}
       run: |
         if [ "${{ steps.package-manager.outputs.name }}" = "pnpm" ]; then
-          pnpm install --frozen-lockfile
+          # don't create symlinks
+          pnpm install --frozen-lockfile --config.node-linker=hoisted
         else
           npm ci
         fi
