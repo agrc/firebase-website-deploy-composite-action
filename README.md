@@ -44,3 +44,13 @@ on:
           service-now-username: ${{ secrets.SN_USERNAME }}
           service-now-password: ${{ secrets.SN_PASSWORD }}
 ```
+
+## PNPM workspaces
+
+For PNPM projects, install `firebase-tools` in the workspace that runs this action, usually the workspace root:
+
+```sh
+pnpm add -D -w firebase-tools
+```
+
+The action uses `pnpm exec firebase` instead of `pnpm dlx firebase-tools` so Firebase CLI execution stays inside your workspace and honors your `pnpm-workspace.yaml` build approvals, such as `allowBuilds` or older `onlyBuiltDependencies` settings.

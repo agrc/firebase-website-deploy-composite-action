@@ -122,7 +122,7 @@ runs:
     - name: 🚀 Firebase deploy preview
       id: deploy
       if: steps.should-create-preview.outputs.deploy == 'yes'
-      shell: 'script --return --quiet --command "bash {0}"'
+      shell: bash
       working-directory: ${{ inputs.working-directory }}
       run: |
         set -euo pipefail
@@ -131,7 +131,7 @@ runs:
         ${{ steps.package-manager.outputs.execute }} firebase hosting:channel:deploy $GITHUB_HEAD_REF \
          --expires 14d \
          --project ${{ inputs.project-id }} \
-        --json | tee /dev/tty > "$results_file"
+        --json | tee "$results_file"
         RESULTS="$(cat "$results_file")"
         echo "url=$(echo $RESULTS | jq --raw-output '.result | .[] | .url' | tr '\n' ' | ')" >> $GITHUB_OUTPUT
         echo "expires=$(echo $RESULTS | jq '.result | .[] | .expireTime' | tr '\n' ' | ')" >> $GITHUB_OUTPUT
