@@ -160,6 +160,7 @@ runs:
       run: >
         ${{ steps.package-manager.outputs.execute }} firebase deploy
         --project ${{ inputs.project-id }}
+        --debug
 
     - name: 🔔 Publish deployment worknote
       uses: agrc/service-now-worknote-action@v1
