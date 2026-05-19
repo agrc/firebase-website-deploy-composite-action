@@ -81,7 +81,12 @@ runs:
     - name: 📥 Download dependencies
       shell: bash
       working-directory: ${{ inputs.working-directory }}
-      run: ${{ steps.package-manager.outputs.name }} install
+      run: |
+        if [ "${{ steps.package-manager.outputs.name }}" = "pnpm" ]; then
+          pnpm install --frozen-lockfile --ignore-scripts
+        else
+          npm ci --ignore-scripts
+        fi
 
     - name: 👥 Copy ArcGIS assets
       shell: bash
