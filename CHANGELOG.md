@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.7](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v2.0.6...v2.0.7) (2026-05-19)
+
+
+### Bug Fixes
+
+* force release ([c64ea08](https://github.com/agrc/firebase-website-deploy-composite-action/commit/c64ea08f0450c6d613608ff89a7e08bd0282f8b4))
+
 ## [2.0.6](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v2.0.5...v2.0.6) (2026-05-19)
 
 
