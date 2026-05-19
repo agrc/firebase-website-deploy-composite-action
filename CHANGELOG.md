@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.4](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v2.0.3...v2.0.4) (2026-05-19)
+
+
+### Bug Fixes
+
+* clean up and add docs about firebase-tools ([a4772c4](https://github.com/agrc/firebase-website-deploy-composite-action/commit/a4772c4911005682a11577ee8a4e2e405c526960))
+
 ## [2.0.3](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v2.0.2...v2.0.3) (2026-05-19)
 
 
