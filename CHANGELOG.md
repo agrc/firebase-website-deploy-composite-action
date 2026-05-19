@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.5](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v2.0.4...v2.0.5) (2026-05-19)
+
+
+### Bug Fixes
+
+* don't create symlinks when installing deps via pnpm ([904b712](https://github.com/agrc/firebase-website-deploy-composite-action/commit/904b712c44e62a92c7a79ad18cc06ee57524ea46))
+
 ## [2.0.4](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v2.0.3...v2.0.4) (2026-05-19)
 
 
