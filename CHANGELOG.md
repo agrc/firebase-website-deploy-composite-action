@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.6](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v2.0.5...v2.0.6) (2026-05-19)
+
+
+### Bug Fixes
+
+* add debug logs to firebase deploy ([2b058da](https://github.com/agrc/firebase-website-deploy-composite-action/commit/2b058da0884ae5efbca246b71f898b8eec9cef0c))
+
 ## [2.0.5](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v2.0.4...v2.0.5) (2026-05-19)
 
 
