@@ -83,9 +83,9 @@ runs:
       working-directory: ${{ inputs.working-directory }}
       run: |
         if [ "${{ steps.package-manager.outputs.name }}" = "pnpm" ]; then
-          pnpm install --frozen-lockfile --ignore-scripts
+          pnpm install --frozen-lockfile
         else
-          npm ci --ignore-scripts
+          npm ci
         fi
 
     - name: 👥 Copy ArcGIS assets
