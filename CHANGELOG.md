@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.0.3](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v2.0.2...v2.0.3) (2026-05-19)
+
+
+### Bug Fixes
+
+* don't ignore scripts ([dc09b99](https://github.com/agrc/firebase-website-deploy-composite-action/commit/dc09b99c7dde69e01eb3ac0a8431bf5b104f4b87))
+* use frozen package installs without scripts ([0db75cf](https://github.com/agrc/firebase-website-deploy-composite-action/commit/0db75cf41413074785fafa47d2a1a99b73f9070a))
+
 ## [2.0.2](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v2.0.1...v2.0.2) (2026-05-15)
 
 
