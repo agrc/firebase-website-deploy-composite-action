@@ -132,7 +132,7 @@ runs:
         ${{ steps.package-manager.outputs.execute }} firebase hosting:channel:deploy $GITHUB_HEAD_REF \
          --expires 14d \
          --project ${{ inputs.project-id }} \
-        --json | tee "$results_file"
+        --json | awk '/^\{/{found=1} found{print}' | tee "$results_file"
         RESULTS="$(cat "$results_file")"
         echo "url=$(echo $RESULTS | jq --raw-output '.result | .[] | .url' | tr '\n' ' | ')" >> $GITHUB_OUTPUT
         echo "expires=$(echo $RESULTS | jq '.result | .[] | .expireTime' | tr '\n' ' | ')" >> $GITHUB_OUTPUT
