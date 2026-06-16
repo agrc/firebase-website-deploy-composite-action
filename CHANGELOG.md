@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.8](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v2.0.7...v2.0.8) (2026-06-16)
+
+
+### Bug Fixes
+
+* prevent jq parse errors during firebase deploy ([55698dd](https://github.com/agrc/firebase-website-deploy-composite-action/commit/55698dd64f925c5bc832c679daab06e4ca5ff291))
+
 ## [2.0.7](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v2.0.6...v2.0.7) (2026-05-19)
 
 
