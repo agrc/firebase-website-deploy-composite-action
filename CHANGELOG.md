@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v2.0.8...v2.1.0) (2026-07-13)
+
+
+### Features
+
+* add pnpm-version input to support pinned version overrides (resolves [#120](https://github.com/agrc/firebase-website-deploy-composite-action/issues/120)) ([68dd886](https://github.com/agrc/firebase-website-deploy-composite-action/commit/68dd88660e77528d7425b0915feb2baafb2fa6bc))
+
 ## [2.0.8](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v2.0.7...v2.0.8) (2026-06-16)
 
 
