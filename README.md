@@ -43,7 +43,21 @@ on:
           service-now-system-id: ${{ secrets.SN_SYS_ID }}
           service-now-username: ${{ secrets.SN_USERNAME }}
           service-now-password: ${{ secrets.SN_PASSWORD }}
+          # Optional: Configure Firebase Functions Artifact Registry policy cleanup (defaults to off/false)
+          # function-policy-setup: true
+          # function-locations: us-central1
+          # function-policy-days: 14
 ```
+
+## Firebase Functions Artifact Registry Policy Cleanup
+
+When deploying Firebase Functions, Google Cloud Artifact Registry can accumulate build artifacts, resulting in high storage costs or deployment issues. This action provides an automated way to configure a lifecycle cleanup policy on the repository.
+
+To opt in, configure the following inputs:
+
+- `function-policy-setup`: Set to `true` to enable auto-setting the policy (default: `false`). When `true`, this action automatically inspects `firebase.json` for a `functions` configuration block and applies the policy.
+- `function-locations`: One or more locations/regions of the Artifact Registry, comma- or space-separated (e.g., `'us-central1'` or `'us-central1, us-west3'`). Defaults to `us-central1`.
+- `function-policy-days`: The number of retention days for keeping artifacts in the registry. Defaults to `14`.
 
 ## PNPM workspaces
 
