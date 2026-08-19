@@ -43,8 +43,8 @@ on:
           service-now-system-id: ${{ secrets.SN_SYS_ID }}
           service-now-username: ${{ secrets.SN_USERNAME }}
           service-now-password: ${{ secrets.SN_PASSWORD }}
-          # Optional: Configure Firebase Functions Artifact Registry policy cleanup (defaults to on/true if functions are detected in firebase.json)
-          # function-policy-setup: false
+          # Optional: Configure Firebase Functions Artifact Registry policy cleanup (defaults to on/yes if functions are detected in firebase.json)
+          # function-policy-setup: no
           # function-locations: us-central1
           # function-policy-days: 90
 ```
@@ -55,7 +55,7 @@ When deploying Firebase Functions, Google Cloud Artifact Registry can accumulate
 
 To customize or opt out, configure the following inputs:
 
-- `function-policy-setup`: Set to `false` to opt out of auto-setting the policy (default: `true`). When enabled, this action automatically inspects `firebase.json` for a `functions` configuration block and applies the policy.
+- `function-policy-setup`: Set to `no` to opt out of auto-setting the policy (default: `yes`). When enabled, this action automatically inspects `firebase.json` for a `functions` configuration block and applies the policy.
 - `function-locations`: One or more locations/regions of the Artifact Registry, comma- or space-separated (e.g., `'us-central1'` or `'us-central1, us-west3'`). Defaults to `us-central1`.
 - `function-policy-days`: The number of retention days for keeping artifacts in the registry. Defaults to `90`.
 

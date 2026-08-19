@@ -19,9 +19,9 @@ inputs:
     required: false
     default: "90"
   function-policy-setup:
-    description: Whether to auto-configure the Artifact Registry policy for Firebase Functions (set to 'false' to opt out if a custom policy is already defined)
+    description: Whether to auto-configure the Artifact Registry policy for Firebase Functions (set to 'no' to opt out if a custom policy is already defined)
     required: false
-    default: "true"
+    default: "yes"
   preview:
     description: Determines if firebase deploys to a preview channel
     required: false
@@ -121,7 +121,7 @@ runs:
 
     - name: ❓ Determine if Firebase Functions are used
       id: check-functions
-      if: inputs.function-policy-setup != 'false'
+      if: inputs.function-policy-setup == 'yes'
       shell: bash
       working-directory: ${{ inputs.working-directory }}
       run: |
