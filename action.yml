@@ -17,7 +17,7 @@ inputs:
   function-policy-days:
     description: The number of days to keep artifacts in Artifact Registry
     required: false
-    default: "14"
+    default: "90"
   function-policy-setup:
     description: Whether to auto-configure the Artifact Registry policy for Firebase Functions (set to 'false' to opt out if a custom policy is already defined)
     required: false
