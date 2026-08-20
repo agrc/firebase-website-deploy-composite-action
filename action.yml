@@ -140,7 +140,11 @@ runs:
       run: |
         for loc in $(echo "${{ inputs.function-locations }}" | tr ',' ' '); do
           echo "Setting policy for location: $loc"
-          ${{ steps.package-manager.outputs.execute }} firebase functions:artifacts:setpolicy --location "$loc" --days ${{ inputs.function-policy-days }} --project ${{ inputs.project-id }}
+          ${{ steps.package-manager.outputs.execute }} firebase functions:artifacts:setpolicy \
+            --location "$loc" \
+            --days "${{ inputs.function-policy-days }}" \
+            --project "${{ inputs.project-id }}" \
+            --force
         done
 
     - name: 🍳 Run prebuild command
