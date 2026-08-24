@@ -10,6 +10,18 @@ inputs:
   project-id:
     description: Project ID or alias. This also sets the firebase environment (https://firebase.google.com/docs/functions/config-env).
     required: true
+  function-locations:
+    description: "One or more locations/regions of the Firebase Functions Artifact Registry, comma- or space-separated (e.g., 'us-central1' or 'us-central1, us-west3')"
+    required: false
+    default: "us-central1"
+  function-policy-days:
+    description: The number of days to keep artifacts in Artifact Registry
+    required: false
+    default: "90"
+  function-policy-setup:
+    description: Whether to auto-configure the Artifact Registry policy for Firebase Functions (set to 'no' to opt out if a custom policy is already defined)
+    required: false
+    default: "no"
   preview:
     description: Determines if firebase deploys to a preview channel
     required: false
@@ -106,6 +118,34 @@ runs:
         workload_identity_provider: ${{ inputs.identity-provider }}
         service_account: ${{ inputs.service-account-email }}
         create_credentials_file: true
+
+    - name: ❓ Determine if Firebase Functions are used
+      id: check-functions
+      if: inputs.function-policy-setup == 'yes'
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      run: |
+        if [ -f "firebase.json" ] && jq -e '.functions' firebase.json >/dev/null 2>&1; then
+          echo "Functions configuration found in firebase.json."
+          echo "has-functions=true" >> $GITHUB_OUTPUT
+        else
+          echo "No functions configuration detected in firebase.json."
+          echo "has-functions=false" >> $GITHUB_OUTPUT
+        fi
+
+    - name: 🧹 Set Firebase Functions Artifact Registry Policy
+      if: steps.check-functions.outputs.has-functions == 'true'
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      run: |
+        for loc in $(echo "${{ inputs.function-locations }}" | tr ',' ' '); do
+          echo "Setting policy for location: $loc"
+          ${{ steps.package-manager.outputs.execute }} firebase functions:artifacts:setpolicy \
+            --location "$loc" \
+            --days "${{ inputs.function-policy-days }}" \
+            --project "${{ inputs.project-id }}" \
+            --force
+        done
 
     - name: 🍳 Run prebuild command
       if: inputs.prebuild-command != ''
