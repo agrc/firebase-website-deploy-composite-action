@@ -21,7 +21,7 @@ inputs:
   function-policy-setup:
     description: Whether to auto-configure the Artifact Registry policy for Firebase Functions (set to 'no' to opt out if a custom policy is already defined)
     required: false
-    default: "yes"
+    default: "no"
   preview:
     description: Determines if firebase deploys to a preview channel
     required: false
