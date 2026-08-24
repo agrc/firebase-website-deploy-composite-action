@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.0](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v2.1.0...v2.2.0) (2026-08-24)
+
+
+### Features
+
+* add opt-in auto-configuration of firebase functions artifact registry policy ([d9bff0f](https://github.com/agrc/firebase-website-deploy-composite-action/commit/d9bff0fbe12ae5112ec07d2a835b7022dc26872d))
+
 ## [2.1.0](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v2.0.8...v2.1.0) (2026-07-13)
 
 
