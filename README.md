@@ -36,6 +36,9 @@ on:
           service-account-email: ${{ secrets.SERVICE_ACCOUNT_EMAIL }}
           project-id: ${{ secrets.PROJECT_ID }}
           build-command: npm run build -- --mode dev
+          google-secrets-env-vars: |-
+            VITE_DISCOVER=DISCOVER
+            VITE_WEB_API=VITE_WEB_API
           preview: yes
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           service-now-instance: ${{ secrets.SN_INSTANCE }}
@@ -48,6 +51,18 @@ on:
           # function-locations: us-central1
           # function-policy-days: 90
 ```
+
+## Google Secret Manager environment variables
+
+Use `google-secrets-env-vars` to load build-time environment variables from Google Secret Manager after the action authenticates to Google Cloud:
+
+```yml
+google-secrets-env-vars: |-
+  VITE_DISCOVER=DISCOVER
+  VITE_WEB_API=VITE_WEB_API
+```
+
+Each line maps an environment variable name to a secret ID in the Google Cloud project specified by `project-id`; the latest secret version is used. The variables are available to `prebuild-command` and `build-command`. The configured service account must have permission to access the requested secrets, such as the Secret Manager Secret Accessor role.
 
 ## Firebase Functions Artifact Registry Policy Cleanup
 

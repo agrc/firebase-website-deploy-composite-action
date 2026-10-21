@@ -10,6 +10,9 @@ inputs:
   project-id:
     description: Project ID or alias. This also sets the firebase environment (https://firebase.google.com/docs/functions/config-env).
     required: true
+  google-secrets-env-vars:
+    description: Newline-separated environment variable to Secret Manager secret ID mappings (ENV_VAR=SECRET_NAME) in the project specified by project-id
+    required: false
   function-locations:
     description: "One or more locations/regions of the Firebase Functions Artifact Registry, comma- or space-separated (e.g., 'us-central1' or 'us-central1, us-west3')"
     required: false
@@ -119,6 +122,31 @@ runs:
         service_account: ${{ inputs.service-account-email }}
         create_credentials_file: true
 
+    - name: 🔐 Prepare Google Secret Manager secrets
+      id: prepare-google-secret-manager
+      if: inputs.google-secrets-env-vars != ''
+      shell: bash
+      env:
+        PROJECT_ID: ${{ inputs.project-id }}
+        SECRET_MAPPINGS: ${{ inputs.google-secrets-env-vars }}
+      run: bash "$GITHUB_ACTION_PATH/scripts/prepare-google-secret-manager.sh"
+
+    - name: 🔐 Fetch Google Secret Manager secrets
+      id: get-google-secret-manager
+      if: inputs.google-secrets-env-vars != ''
+      uses: google-github-actions/get-secretmanager-secrets@v3
+      with:
+        secrets: ${{ steps.prepare-google-secret-manager.outputs.secrets }}
+
+    - name: 🔐 Prepare Google Secret Manager environment
+      id: google-secret-manager-env
+      if: inputs.google-secrets-env-vars != ''
+      shell: bash
+      env:
+        SECRET_OUTPUTS: ${{ toJSON(steps.get-google-secret-manager.outputs) }}
+        ENVIRONMENT_NAMES: ${{ steps.prepare-google-secret-manager.outputs.environment-names }}
+      run: bash "$GITHUB_ACTION_PATH/scripts/create-google-secret-manager-env.sh"
+
     - name: ❓ Determine if Firebase Functions are used
       id: check-functions
       if: inputs.function-policy-setup == 'yes'
@@ -151,11 +179,13 @@ runs:
       if: inputs.prebuild-command != ''
       shell: bash
       working-directory: ${{ inputs.working-directory }}
+      env: ${{ fromJSON(steps.google-secret-manager-env.outputs.environment || '{}') }}
       run: ${{ inputs.prebuild-command }}
 
     - name: 🏗 Run build command
       shell: bash
       working-directory: ${{ inputs.working-directory }}
+      env: ${{ fromJSON(steps.google-secret-manager-env.outputs.environment || '{}') }}
       run: ${{ inputs.build-command }}
 
     - name: ❓ Determining if preview should be created
