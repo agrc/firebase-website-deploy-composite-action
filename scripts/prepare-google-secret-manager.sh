@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-if [[ ! "$PROJECT_ID" =~ ^[A-Za-z0-9][A-Za-z0-9-]*$ ]]; then
+if [[ ! "$PROJECT_ID" =~ ^[a-z][a-z0-9-]{4,28}[a-z0-9]$ ]]; then
   echo "::error::project-id must be a valid Google Cloud project ID to load Secret Manager secrets."
   exit 1
 fi
