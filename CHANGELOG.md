@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.1-rc.1](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v2.2.0...v2.2.1-rc.1) (2026-10-29)
+
+
+### Features
+
+* load build env vars from Google Secret Manager ([a55fd57](https://github.com/agrc/firebase-website-deploy-composite-action/commit/a55fd57ac1e284916a3b7b3bd16d20c60f47ec79))
+
 ## [2.2.0](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v2.1.0...v2.2.0) (2026-08-24)
 
 
