@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.0](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v2.2.0...v2.3.0) (2026-10-30)
+
+
+### Features
+
+* enable loading build env vars from GSM ([#127](https://github.com/agrc/firebase-website-deploy-composite-action/issues/127)) ([48505b0](https://github.com/agrc/firebase-website-deploy-composite-action/commit/48505b02be0ad569b3aed18b0f3e65c9f6f880f8))
+
 ## [2.2.0](https://github.com/agrc/firebase-website-deploy-composite-action/compare/v2.1.0...v2.2.0) (2026-08-24)
 
 
